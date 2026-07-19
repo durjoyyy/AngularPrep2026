@@ -1,0 +1,11 @@
+.hover-box{
+    width: 200px;
+    height: 100px;
+    background-color: rgb(255, 96, 96);
+    text-align: center;
+    line-height:100px
+}
+
+.hover-box:hover{
+    background-color: rgb(220, 255, 192);
+}

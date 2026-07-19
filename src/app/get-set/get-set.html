@@ -1,0 +1,13 @@
+<input (input)="updateName($event.target.value)" style="padding: 5px; border-radius: 10px;" type="text" placeholder="Enter Name"  />
+
+<p>Your name is: {{ name }}</p>
+
+<input (input)="favTeam = $event.target.value" style="padding: 5px; border-radius: 10px;" type="text" placeholder="Fav Team"  />
+<p>Fav Team: {{ favTeam }}</p>
+
+
+<input #userInput type="text" placeholder="Fav Player" style="padding: 5px; border-radius: 10px;">
+<p>Fav Player: {{favPlayer}}</p>
+
+
+<button (click)="getFavPlayer(userInput.value)" style="padding: 5px; border-radius: 10px;"> Get Fav Player</button>
