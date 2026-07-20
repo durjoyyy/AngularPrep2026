@@ -1,0 +1,59 @@
+@if(isLoggedIn){
+    <h1>User is Logged In</h1>
+}
+@else {
+    <h1>Please Log in</h1>
+}
+
+
+<button (click)="toggleBox()">Toggle Button</button>
+
+@if(showBox){
+    <div style="padding: 10px; border-color: black; border: 1px black solid; margin-top: 10px; max-width: 300px; background-color: cyan; border-radius: 10px;"> Box </div>
+}
+
+@if(status=='pending'){
+    <p>Order is Pending</p>
+}
+@else if (status=='processing') {
+    <p>Order is getting processed</p>
+}
+@else {
+    <p>Order Shipped</p>
+}
+
+
+@switch (company) {
+    @case ('Daimler') {
+        <p>{{company}} has good Work Life Balance</p>
+    }
+    @case ('Microsoft') {
+    <p>{{company}} has moderate Work Life Balance</p>
+    }
+    @case ('BCG') {
+    <p>{{company}} has bad Work Life Balance</p>
+    }
+    @default {
+        <p>IT has good work life balance</p>
+    }
+}
+
+
+
+@for (s of skills; track $index) {
+    <p style="background-color: rgb(187, 187, 187); max-width: 100px;">{{$index+1}}.{{s}}</p>
+}
+
+
+
+
+<!-- 3 38 45 -->
+
+
+
+
+
+
+
+
+

@@ -7,10 +7,11 @@ import { EventTypes } from "./event-types/event-types";
 import { Counter } from "./counter/counter";
 import { GetSet } from "./get-set/get-set";
 import { StyleRealted } from "./style-realted/style-realted";
+import { IfElse } from './if-else/if-else';
 
 @Component({
   selector: 'app-root',
-  imports: [LoginPage, SignInComponent, Events, EventTypes, Counter, GetSet, StyleRealted],
+  imports: [IfElse],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
