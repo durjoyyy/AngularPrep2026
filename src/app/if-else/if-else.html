@@ -1,59 +1,85 @@
 @if(isLoggedIn){
-    <h1>User is Logged In</h1>
+<h1>User is Logged In</h1>
+} @else {
+<h1>Please Log in</h1>
 }
-@else {
-    <h1>Please Log in</h1>
-}
-
 
 <button (click)="toggleBox()">Toggle Button</button>
 
 @if(showBox){
-    <div style="padding: 10px; border-color: black; border: 1px black solid; margin-top: 10px; max-width: 300px; background-color: cyan; border-radius: 10px;"> Box </div>
+<div
+  style="
+    padding: 10px;
+    border-color: black;
+    border: 1px black solid;
+    margin-top: 10px;
+    max-width: 300px;
+    background-color: cyan;
+    border-radius: 10px;
+  "
+>
+  Box
+</div>
+} @if(status=='pending'){
+<p>Order is Pending</p>
+} @else if (status=='processing') {
+<p>Order is getting processed</p>
+} @else {
+<p>Order Shipped</p>
 }
 
-@if(status=='pending'){
-    <p>Order is Pending</p>
-}
-@else if (status=='processing') {
-    <p>Order is getting processed</p>
-}
-@else {
-    <p>Order Shipped</p>
-}
+<br />
 
 
-@switch (company) {
-    @case ('Daimler') {
-        <p>{{company}} has good Work Life Balance</p>
-    }
-    @case ('Microsoft') {
-    <p>{{company}} has moderate Work Life Balance</p>
-    }
-    @case ('BCG') {
-    <p>{{company}} has bad Work Life Balance</p>
-    }
-    @default {
-        <p>IT has good work life balance</p>
-    }
-}
+@switch (company) { @case ('Daimler') {
+<p>{{ company }} has good Work Life Balance</p>
+} @case ('Microsoft') {
+<p>{{ company }} has moderate Work Life Balance</p>
+} @case ('BCG') {
+<p>{{ company }} has bad Work Life Balance</p>
+} @default {
+<p>IT has good work life balance</p>
+} }
 
 
 
-@for (s of skills; track $index) {
-    <p style="background-color: rgb(187, 187, 187); max-width: 100px;">{{$index+1}}.{{s}}</p>
-}
+<div style="display: flex; flex-wrap: wrap; gap: 100px">
+  @for (s of skills; track $index) {
+  <p style="background-color: rgb(187, 187, 187); max-width: 100px">{{ $index + 1 }}.{{ s }}</p>
+  }
+</div>
+
+<div class="card-container">
+  @for (p of players; track p.id) {
+  <div class="card">
+    <h4>{{ p.player }}</h4>
+    <p>Club: {{ p.club }}</p>
+  </div>
+  }
+</div>
+
+<div class="card-container">
+  @for (d of doctors; track $index; let i = $index) {
+  <div class="card">
+    <h4>{{ d.name }}</h4>
+    <p>{{ d.specialization }}</p>
+    <button (click)="removeItem(i)">Delete</button>
+  </div>
+  }
+</div>
 
 
-
-
-<!-- 3 38 45 -->
-
-
-
-
-
-
-
-
-
+<div class="card-container">
+  @for (s of sexPositions; 
+  track $index; let i = $index; let c=$count; let f=$first; let l=$last; let e=$even; let o=$even) {
+  <div class="card" [style.background]="$odd?'lightgray':'gray'" >
+    <h4>{{$index+1}}.{{ s.name }}</h4>
+    <p>{{ s.difficulty }}</p>
+    <p>Total Count: {{c}}</p>
+    <p>First: {{f}}</p>
+    <p>Last: {{l}}</p>
+    <p>Even : {{e}}</p>
+    <p>Odd: {{o}}</p>
+  </div>
+  }
+</div>

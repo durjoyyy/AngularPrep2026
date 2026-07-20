@@ -1,0 +1,34 @@
+<h3>Signals</h3>
+<p>Signal: {{ cash() }}</p>
+<p>Normal var: {{ cashInHand }}</p>
+
+<button (click)="cash.set(0); updateCash()">Change Signal</button>
+
+<div style="display: flex; flex-direction: row; align-items: center; gap: 20px">
+  @for (p of players(); track $index) {
+  <p>{{ p }}</p>
+  }
+</div>
+
+<button (click)="updatePlayers()">Add Player</button>
+
+<!-- <div style="display: flex; flex-direction: row; align-items: center; gap: 20px">
+  @for (d of details(); track $index) {
+  <h4>{{ d.fullName }} |</h4>
+  <p>{{ d.age }}</p>
+  }
+</div> -->
+
+<h4>{{fullName()}}</h4>
+
+<h4>Salary</h4>
+<div style="display: flex; flex-direction: row; align-items: center; gap: 20px" >
+  <p>{{ salary() }}</p>
+  <p>{{ incrementedSalary20() }}</p>
+  <p>{{ incrementedSalary30() }}</p>
+  <button (click)="increaseSalary()"> Increase Button </button>
+</div>
+
+
+<h4>{{price()}}</h4>
+<h4>{{totalPrice()}}</h4>

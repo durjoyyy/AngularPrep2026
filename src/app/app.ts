@@ -8,10 +8,13 @@ import { Counter } from "./counter/counter";
 import { GetSet } from "./get-set/get-set";
 import { StyleRealted } from "./style-realted/style-realted";
 import { IfElse } from './if-else/if-else';
+import { Signals } from './signals/signals';
+import { Effects } from "./effects/effects";
+import { Pipes } from "./pipes/pipes";
 
 @Component({
   selector: 'app-root',
-  imports: [IfElse],
+  imports: [Signals, Effects, Pipes],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
