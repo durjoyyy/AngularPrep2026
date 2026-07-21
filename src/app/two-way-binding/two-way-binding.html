@@ -1,0 +1,20 @@
+<h3>Two Way Binding</h3>
+
+
+<!-- old method -->
+<input type="text" [(ngModel)]="username" placeholder="username">
+<p>{{username}}</p>
+
+
+
+<!-- old way -->
+<input type="text" [value]="newName()" (input)="newName.set($event.target.value)">
+<p>{{newName()}}</p>
+
+
+
+<input type="text" [value]="userDetails().name" (input)="updateName($event.target.value)">
+<br>
+<p>Update Name: {{userDetails().name}}</p>
+<p>Age: {{userDetails().age}}</p>
+<button (click)="updateAge()" >Increase Age</button>

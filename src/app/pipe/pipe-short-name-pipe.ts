@@ -4,7 +4,11 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'pipeShortName',
 })
 export class PipeShortNamePipe implements PipeTransform {
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(fullName: string): string | null{
+   const parts=fullName.split(' ');
+   if(parts.length<2) return fullName;
+   const first=parts[0].charAt(0).toUpperCase();
+   const last=parts[1]
+   return `${first}. ${last}`
   }
 }

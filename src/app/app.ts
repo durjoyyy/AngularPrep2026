@@ -11,10 +11,12 @@ import { IfElse } from './if-else/if-else';
 import { Signals } from './signals/signals';
 import { Effects } from "./effects/effects";
 import { Pipes } from "./pipes/pipes";
+import { SignalDeepDive } from "./signal-deep-dive/signal-deep-dive";
+import { TwoWayBinding } from "./two-way-binding/two-way-binding";
 
 @Component({
   selector: 'app-root',
-  imports: [Signals, Effects, Pipes],
+  imports: [Signals, Effects, Pipes, SignalDeepDive, TwoWayBinding],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

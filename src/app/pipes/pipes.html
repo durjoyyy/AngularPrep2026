@@ -1,21 +1,27 @@
-<h3>{{lowerName | uppercase}}</h3>
-<h3>{{upperName | lowercase}}</h3>
+<h4>{{ lowerName | uppercase }}</h4>
+<h4>{{ upperName | lowercase }}</h4>
 
+
+<h4>Date: {{ today }}</h4>
+<div>
+  <p>Short Date: {{ today | date: 'short' }} |</p>
+  <p>Full Date: {{ today | date: 'full' }}|</p>
+  <p>Custom Date: {{ today | date: 'dd/mm/yyyy' }}</p>
+</div>
+
+<h4>INR: {{ amount | currency: 'INR' }}</h4>
+<div>
+  <p>USD: {{ amount | currency: 'USD' }}  |</p>
+  <p>EUR: {{ amount | currency: 'EUR' }} |</p>
+  <p>Custom: {{ amount | currency: 'INR':'symbol':'1.0-0' }}</p>
+</div>
+
+
+<h4>{{ per | percent }}</h4>
 <br>
 
-<h3>Date: {{today}}</h3>
-<p>Short Date: {{today | date:'short'}}</p>
-<p>Full Date: {{today| date:'full'}}</p>
-<p>Custom Date: {{today | date:'dd/mm/yyyy'}}</p>
-
-<br>
-<h3>INR: {{amount | currency:'INR'}}</h3>
-<p>USD: {{amount | currency:'USD'}}</p>
-<p>EUR: {{amount | currency:'EUR'}}</p>
-<p>Custom: {{amount | currency:'INR':'symbol':'1.0-0'}}</p>
-<br>
-
-<h3>{{per|percent}}</h3>
-<br>
-
-<p>{{user| json}}</p>
+<p>{{ user | json }}</p>
+<h3>Custom Pipes</h3>
+<p>{{fullName | pipeShortName}}</p>
+<p>USD: {{usd | currency}}</p>
+<p>INR: {{usdToInr| convert:usdToInr | currency:'INR'}} </p>
