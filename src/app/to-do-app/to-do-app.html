@@ -1,0 +1,99 @@
+<h2 style="text-align: center; color: #333; margin-bottom: 20px;">
+  To-do App
+</h2>
+
+<div
+  style="max-width: 500px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px; background: #f9f9f9; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"
+>
+  <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+    <input
+      type="text"
+      placeholder="Write a task to do"
+      [value]="newTodo()"
+      (input)="newTodo.set($any($event.target).value)"
+      style="
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 15px;
+      "
+    />
+
+    <button
+      (click)="addTodo()"
+      style="
+        padding: 10px 18px;
+        border: none;
+        border-radius: 5px;
+        background: #007bff;
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+      "
+    >
+      Add
+    </button>
+  </div>
+
+  <ul style="list-style: none; padding: 0; margin: 0;">
+    @for (t of todos(); track $index) {
+    <li
+      style="
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px;
+        margin-bottom: 10px;
+        background: white;
+        border-radius: 6px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      "
+    >
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span
+          style="
+            width: 25px;
+            height: 25px;
+            background: #007bff;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 13px;
+            font-weight: bold;
+          "
+        >
+          {{ $index + 1 }}
+        </span>
+
+        <span
+          (click)="toggleTodo($index)"
+          [style.text-decoration]="t.done ? 'line-through' : 'none'"
+          style="
+            cursor: pointer;
+            font-size: 16px;
+          "
+        >
+          {{ t.text }}
+        </span>
+      </div>
+
+      <button
+        (click)="deleteTodo($index)"
+        style="
+          border: none;
+          background: #dc3545;
+          color: white;
+          padding: 7px 14px;
+          border-radius: 5px;
+          cursor: pointer;
+        "
+      >
+        Delete
+      </button>
+    </li>
+    }
+  </ul>
+</div>

@@ -13,10 +13,11 @@ import { Effects } from "./effects/effects";
 import { Pipes } from "./pipes/pipes";
 import { SignalDeepDive } from "./signal-deep-dive/signal-deep-dive";
 import { TwoWayBinding } from "./two-way-binding/two-way-binding";
+import { ToDoApp } from "./to-do-app/to-do-app";
 
 @Component({
   selector: 'app-root',
-  imports: [Signals, Effects, Pipes, SignalDeepDive, TwoWayBinding],
+  imports: [Signals, Effects, Pipes, SignalDeepDive, TwoWayBinding, ToDoApp],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
