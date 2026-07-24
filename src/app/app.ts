@@ -14,10 +14,13 @@ import { Pipes } from "./pipes/pipes";
 import { SignalDeepDive } from "./signal-deep-dive/signal-deep-dive";
 import { TwoWayBinding } from "./two-way-binding/two-way-binding";
 import { ToDoApp } from "./to-do-app/to-do-app";
+import { SignalsWithTemplateBinding } from "./signals-with-template-binding/signals-with-template-binding";
+import { SignalInput } from "./signal-input/signal-input";
+import { Store } from "./store/store";
 
 @Component({
   selector: 'app-root',
-  imports: [Signals, Effects, Pipes, SignalDeepDive, TwoWayBinding, ToDoApp],
+  imports: [Signals, Effects, Pipes, SignalDeepDive, TwoWayBinding, ToDoApp, SignalsWithTemplateBinding, SignalInput, Store],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

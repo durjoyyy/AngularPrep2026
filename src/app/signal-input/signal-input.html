@@ -1,0 +1,7 @@
+<h3>Parent Component</h3>
+<p>Message: {{message}}</p>
+
+
+<app-child #child [nameNew]="uname" (notify)="onMessage($event)" ></app-child>
+<p>Message from Child: {{child.message()}}</p>
+

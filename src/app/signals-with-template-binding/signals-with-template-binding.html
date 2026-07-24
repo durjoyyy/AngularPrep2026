@@ -1,0 +1,44 @@
+<h3>Signals with template binding</h3>
+
+@if(isLoggedIn()){
+<p>Welcome Durjoy</p>
+} @else {
+<p>Welcome User. Please Log In</p>
+}
+
+<button [disabled]="isLoggedIn()" (click)="isLoggedIn.set(true)">Log In</button>
+
+<button [disabled]="!isLoggedIn()" (click)="isLoggedIn.set(false)">Log Out</button>
+<!-- <p>{{count()}}</p> -->
+
+
+  <ul>
+    @for (item of items(); track $index) {
+        <div style="display: flex; flex-direction: row">
+    <li>{{ item }}</li>
+    </div>
+    }
+  </ul>
+
+
+<button (click)="addItem()">Add Item</button>
+
+<h3>User Dashboard(Role Based Access)</h3>
+
+<div style="display: flex; gap: 10px">
+  <button (click)="makeUser()">User</button>
+  <button (click)="makeAdmin()">Admin</button>
+</div>
+
+@if(role()=='admin'){
+<p>Welcome admin</p>
+} @else {
+<p>Welcome user</p>
+}
+
+<h4>Available Features:</h4>
+<ul>
+  @for (f of features(); track $index) {
+  <li>{{ f }}</li>
+  }
+</ul>
