@@ -41,14 +41,30 @@
     <button>Dynamic button</button>
     <app-to-do-app></app-to-do-app>
  </app-cards> -->
+
 <!-- <app-button-reusable [label1]="'Suck Me'" label2="Fuck Me" 
 (clicked1)="saveData()" (clicked2)="saveDataString($event)">
 <p>{{message}}</p>
+
 </app-button-reusable> -->
-<app-forms-reusable 
+<!-- <app-forms-reusable 
 [label]="'Email'" 
 [type]="'Email'"
 (valueChange)="onEmailChange($event)"
 >
 <p>{{emailForm}}</p>
-</app-forms-reusable>
+</app-forms-reusable> -->
+
+
+<h2>Router</h2>
+
+<nav style="display: flex; gap: 20px;">
+    <a routerLink="/">Home</a>
+    <a routerLink="/about">About</a>
+    <a routerLink="/contact">Contact</a>
+    <a routerLink="/dashboard">Dashboard</a>
+</nav>
+
+<hr>
+
+<router-outlet></router-outlet>
