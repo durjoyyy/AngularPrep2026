@@ -23,10 +23,11 @@ import { Cards } from "./cards/cards";
 import { ButtonReusable } from "./button-reusable/button-reusable";
 import { FormsReusable } from "./forms-reusable/forms-reusable";
 import { FormField } from '@angular/forms/signals';
+import { Header } from "./header/header";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLinkWithHref],
+  imports: [RouterOutlet, RouterLinkWithHref, Header],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
