@@ -1,0 +1,22 @@
+<h3>Template Driven Form + Signal</h3>
+
+<input type="text" [(ngModel)]="name" (ngModelChange)="name.set($event)" placeholder="name" />
+<br>
+<input type="text" [(ngModel)]="email" (ngModelChange)="email.set($event)" placeholder="email" />
+<button (click)="submitForm()">Submit</button>
+
+<p>Name: {{ name() }}</p>
+<p>Email: {{ email() }}</p>
+
+
+<h3>Reactive Form + Signal</h3>
+<form action="" [formGroup]="form">
+    <input type="text" formControlName="name" placeholder="name">
+    <br>
+    <input type="text" formControlName="email" placeholder="email">
+</form>
+
+<button (click)="submitFormReactive()">Submit</button>
+
+<p>Name: {{ name() }}</p>
+<pre>{{userSignal()| json}}</pre>

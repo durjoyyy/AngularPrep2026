@@ -1,0 +1,9 @@
+<h3>Reusable Button</h3>
+
+<div style="display: flex; gap: 25px;">
+<button (click)="clicked1.emit()">{{label1()}}</button>
+
+<button (click)="clickBtn()">{{label2()}}</button>
+</div>
+
+<ng-content></ng-content>

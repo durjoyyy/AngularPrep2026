@@ -10,8 +10,6 @@ import { UserStore } from '../core/store/user';
 })
 export class CounterApp {
   constructor(public counterStore:CounterStore, public userStore:UserStore){
-    
-    
   }
 
 }

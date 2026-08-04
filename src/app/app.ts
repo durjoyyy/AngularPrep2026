@@ -18,10 +18,15 @@ import { SignalsWithTemplateBinding } from "./signals-with-template-binding/sign
 import { SignalInput } from "./signal-input/signal-input";
 import { CounterStore } from './core/store/counter';
 import { CounterApp } from "./counter-app/counter-app";
+import { Forms } from "./forms/forms";
+import { Cards } from "./cards/cards";
+import { ButtonReusable } from "./button-reusable/button-reusable";
+import { FormsReusable } from "./forms-reusable/forms-reusable";
+import { FormField } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-root',
-  imports: [Signals, Effects, Pipes, SignalDeepDive, TwoWayBinding, ToDoApp, SignalsWithTemplateBinding, SignalInput, CounterApp],
+  imports: [FormsReusable,FormField],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
@@ -74,6 +79,25 @@ export class App {
 
   sum(a:any,b:number){
     return a+b;
+  }
+
+
+  saveData(){
+    console.log("Data Run");
+  }
+
+  message:string='';
+
+  saveDataString(s:any){
+    console.log(s);
+    this.message=s;
+  }
+
+
+  emailForm='';
+  onEmailChange(value:string){
+    console.log('EMAIL: ', value);
+    this.emailForm=value;
   }
 
 

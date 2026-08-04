@@ -31,7 +31,24 @@
 <!-- <app-pipes></app-pipes> -->
 <!-- <app-signal-deep-dive></app-signal-deep-dive> -->
 <!-- <app-two-way-binding></app-two-way-binding> -->
- <!-- <app-to-do-app></app-to-do-app> -->
+<!-- <app-to-do-app></app-to-do-app> -->
 <!-- <app-signals-with-template-binding></app-signals-with-template-binding> -->
 <!-- <app-signal-input></app-signal-input> -->
-<app-counter-app></app-counter-app>
+<!-- <app-counter-app></app-counter-app> -->
+<!-- <app-forms></app-forms> -->
+<!-- <app-cards title='Card Reusable' desc="Reusable component">
+    <p>This is an ng content area</p>
+    <button>Dynamic button</button>
+    <app-to-do-app></app-to-do-app>
+ </app-cards> -->
+<!-- <app-button-reusable [label1]="'Suck Me'" label2="Fuck Me" 
+(clicked1)="saveData()" (clicked2)="saveDataString($event)">
+<p>{{message}}</p>
+</app-button-reusable> -->
+<app-forms-reusable 
+[label]="'Email'" 
+[type]="'Email'"
+(valueChange)="onEmailChange($event)"
+>
+<p>{{emailForm}}</p>
+</app-forms-reusable>
