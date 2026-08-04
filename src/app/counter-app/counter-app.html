@@ -1,0 +1,23 @@
+<h3>Counter Store</h3>
+
+
+
+<p>Current Count:{{counterStore.count()}}</p>
+
+<button (click)="counterStore.increment()">+</button>
+<button (click)="counterStore.decrement()">-</button>
+<button (click)="counterStore.reset()">Reset</button>
+
+
+<h2>User Roles</h2>
+@if(userStore.user()){
+    <p>Welcome {{userStore.user()!.name}}</p>
+    @if (userStore.isAdmin()) {
+        <p>Admin Access</p>
+    }
+
+    <button (click)="userStore.logout()">Logout</button>
+}
+@else {
+    <button (click)="userStore.login('Durjoy','admin')">Log in as Admin</button>
+}

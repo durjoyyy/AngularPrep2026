@@ -16,15 +16,21 @@ import { TwoWayBinding } from "./two-way-binding/two-way-binding";
 import { ToDoApp } from "./to-do-app/to-do-app";
 import { SignalsWithTemplateBinding } from "./signals-with-template-binding/signals-with-template-binding";
 import { SignalInput } from "./signal-input/signal-input";
-import { Store } from "./store/store";
+import { CounterStore } from './core/store/counter';
+import { CounterApp } from "./counter-app/counter-app";
 
 @Component({
   selector: 'app-root',
-  imports: [Signals, Effects, Pipes, SignalDeepDive, TwoWayBinding, ToDoApp, SignalsWithTemplateBinding, SignalInput, Store],
+  imports: [Signals, Effects, Pipes, SignalDeepDive, TwoWayBinding, ToDoApp, SignalsWithTemplateBinding, SignalInput, CounterApp],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
+
+  constructor(public counterStore:CounterStore){
+
+  }
+
   protected readonly title = signal('Angular-Tutorial');
 
   name="Angular Tutorial";
