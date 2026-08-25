@@ -27,7 +27,7 @@ import { Header } from "./header/header";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLinkWithHref, Header],
+  imports: [RouterOutlet, RouterLinkWithHref, Header, TwoWayBinding, SignalInput],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

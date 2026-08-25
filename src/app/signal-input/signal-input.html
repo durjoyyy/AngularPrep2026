@@ -2,6 +2,8 @@
 <p>Message: {{message}}</p>
 
 
-<app-child #child [nameNew]="uname" (notify)="onMessage($event)" ></app-child>
-<p>Message from Child: {{child.message()}}</p>
+<app-child [nameNew]="uname" 
+(oldMessage)="onMessage($event)" 
+(newMessage)="onMessage($event)">
+</app-child>
 

@@ -1,4 +1,4 @@
-import { Component, input,EventEmitter,Output, signal } from '@angular/core';
+import { Component, input, EventEmitter, Output, output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -13,16 +13,16 @@ export class Child {
 
 
   //old way: send from child to parent
-  @Output() notify = new EventEmitter<string>();
-  sendToParent(){
-    this.notify.emit("Hello Parent, old way")
+  @Output() oldMessage = new EventEmitter<string>();
+  sendToParentOld(){
+    this.oldMessage.emit("Hello Parent, old way");
   }
 
 
   //new way: send from child to parent
-  message=signal("Hello Parent, New Way");
-  updateMessage(){
-    this.message.set("Updated from child to parent");
+  newMessage = output<string>();
+  sendToParentNew(){
+    this.newMessage.emit("Hello Parent, new way");
   }
 
 
