@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CounterStore } from '../core/store/counter';
-import { UserStore } from '../core/store/user';
+import { CounterStore } from '../../services/counter';
+import { UserStore } from '../../services/user';
 
 @Component({
   selector: 'app-counter-app',
